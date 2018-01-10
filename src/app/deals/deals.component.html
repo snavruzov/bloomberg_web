@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Deal UID</th>
+    <th scope="col" data-toggle="tooltip" data-placement="top" title="ISO Code 'Ordering Currency'">From Currency</th>
+    <th scope="col" data-toggle="tooltip" data-placement="top" title="ISO Code">To Currency</th>
+    <th scope="col">Deal Timestamp</th>
+    <th scope="col" data-toggle="tooltip" data-placement="top" title="Deal Amount in ordering currency">Amount</th>
+    <th scope="col">CSV File Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let dl of dealData">
+    <th scope="row">{{dl.deal_id}}</th>
+    <td>{{dl.fromCurrencyIso}}</td>
+    <td>{{dl.toCurrencyIso}}</td>
+    <td>{{dl.dealTimestamp}}</td>
+    <td>{{dl.orderingAmount}}</td>
+    <td>{{dl.ref.file_name}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<nav aria-label="...">
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+      <a class="page-link" routerLink="/deals/{{pager.currentPage - 1}}" (click)="getDealList(pager.currentPage - 1)">Previous</a>
+    </li>
+    <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+      <a class="page-link" routerLink="/deals/{{page}}" (click)="getDealList(page)">{{page}}</a>
+    </li>
+    <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <a class="page-link" routerLink="/deals/{{pager.currentPage + 1}}" (click)="getDealList(pager.currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav>

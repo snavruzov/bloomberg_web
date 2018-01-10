@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a routerLink="/upload" class="nav-link">Dashboard <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/deals/1" class="nav-link">Deals</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/broken/1" class="nav-link">Broken</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/stats" class="nav-link">Statistics</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <div class="jumbotron">
+    <p class="lead">Clustered Data Warehouse</p>
+    <p>Data warehouse for Bloomberg to analyze FX deals.
+      Importing deals details from files into DB.
+      The requested performance is to be able to import the file containing 100,000 records
+      in less than 5 seconds.</p>
+  </div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,45 @@
+<form>
+  <div class="form-group">
+    <label class="btn btn-default">
+      <input type="file" class="form-control-file" multiple (change)="selectFile($event)">
+    </label>
+
+    <button type="button" class="btn btn-primary btn-sm" [disabled]="!selectedFiles"
+            (click)="upload()">Upload</button>
+  </div>
+</form>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  {{error}}
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">File name</th>
+    <th scope="col">Size</th>
+    <th scope="col">Progress</th>
+    <th scope="col">Response</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let fl of fileinfo">
+    <th scope="row">1</th>
+    <td>{{fl.name}}</td>
+    <td>{{fl.size}}</td>
+    <td>{{fl.percentage}}%</td>
+    <td>
+      <div *ngIf="fl.csvinfo">
+        <div *ngIf="fl.csvinfo.error" [ngClass]="{'err':true}"> {{fl.csvinfo.message}}</div>
+        <div *ngIf="fl.csvinfo.result" [ngClass]="{'ok':true}">
+          <ul>
+            <li> benchmark: {{fl.csvinfo.result.benchmark}}/ms</li>
+            <li> valid deals: {{fl.csvinfo.result.validDeals}}</li>
+            <li> invalid deals: {{fl.csvinfo.result.invalidDeals}}</li>
+          </ul>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

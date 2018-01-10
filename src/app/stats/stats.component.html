@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">ISO</th>
+    <th scope="col" data-toggle="tooltip" data-placement="top" title="Accumulative Amount">Amount</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let st of statsData">
+    <th scope="row">{{st.isoCode}}</th>
+    <td>{{st.count}}</td>
+  </tr>
+  </tbody>
+</table>

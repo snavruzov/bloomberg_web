@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Text</th>
+    <th scope="col">File Name</th>
+    <th scope="col">CSV Line</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let br of brokenData">
+    <th scope="row">{{br.id}}</th>
+    <td>{{br.line_text}}</td>
+    <td>{{br.ref.file_name}}</td>
+    <td>{{br.rec_line}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<nav aria-label="...">
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+    <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+      <a class="page-link" routerLink="/deals/{{pager.currentPage - 1}}" (click)="getDealList(pager.currentPage - 1)">Previous</a>
+    </li>
+    <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+      <a class="page-link" routerLink="/deals/{{page}}" (click)="getDealList(page)">{{page}}</a>
+    </li>
+    <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+      <a class="page-link" routerLink="/deals/{{pager.currentPage + 1}}" (click)="getDealList(pager.currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav>
