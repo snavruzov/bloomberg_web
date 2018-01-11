@@ -33,3 +33,5 @@ Invalid Deals page:
 
 Ordering Amoun Statistic page:
 ![N|Solid](http://res.cloudinary.com/dapw81cmq/image/upload/v1515668949/screenshot-localhost-4200-2018-01-11-15-07-57-937_jxe8tc.png)
+
+You can test it out here: http://173.249.12.140:4200/upload
