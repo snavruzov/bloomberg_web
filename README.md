@@ -22,5 +22,14 @@ $ docker run -d \
 ```
 Docker will run Angular application on 4200 port.
 
-Main Page:
+Dashboard:
 ![N|Solid](http://res.cloudinary.com/dapw81cmq/image/upload/v1515668949/screenshot-1_dcdox9.png)
+
+Valid Deals page:
+![N|Solid](http://res.cloudinary.com/dapw81cmq/image/upload/v1515668949/screenshot-localhost-2_utdpl5.png)
+
+Invalid Deals page:
+![N|Solid](http://res.cloudinary.com/dapw81cmq/image/upload/v1515668949/screenshot-localhost-3_c1fczb.png)
+
+Ordering Amoun Statistic page:
+![N|Solid](http://res.cloudinary.com/dapw81cmq/image/upload/v1515668949/screenshot-localhost-4200-2018-01-11-15-07-57-937_jxe8tc.png)
